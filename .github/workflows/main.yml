@@ -14,12 +14,13 @@ jobs:
 
       - uses: actions/setup-java@v4
         with:
-          java-version: "17"
+          distribution: 'temurin'  # Fix: specify Java distribution
+          java-version: '17'
 
       - uses: subosito/flutter-action@v2
         with:
-          distribution: "stable"  # Add this line
-          flutter-version: "3.3.5" # Optional: pin exact version
+          distribution: "stable"
+          flutter-version: "3.3.5"
 
       - run: flutter pub get
       - run: flutter analyze
@@ -34,7 +35,8 @@ jobs:
 
       - uses: actions/setup-java@v4
         with:
-          java-version: "17"
+          distribution: 'temurin'
+          java-version: '17'
 
       - uses: subosito/flutter-action@v2
         with:
@@ -54,7 +56,8 @@ jobs:
 
       - uses: actions/setup-java@v4
         with:
-          java-version: "17"
+          distribution: 'temurin'
+          java-version: '17'
 
       - uses: subosito/flutter-action@v2
         with:
