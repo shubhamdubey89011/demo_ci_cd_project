@@ -20,7 +20,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           distribution: "stable"
-          flutter-version: "3.3.5"
+          flutter-version: "3.35.2"
 
       - run: flutter pub get
       - run: flutter analyze
@@ -41,7 +41,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           distribution: "stable"
-          flutter-version: "3.3.5"
+          flutter-version: "3.35.2"
 
       - run: flutter pub get
       - run: flutter clean
@@ -62,7 +62,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           distribution: "stable"
-          flutter-version: "3.3.5"
+          flutter-version: "3.35.2"
 
       - run: flutter pub get
       - run: flutter clean
