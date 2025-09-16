@@ -1,6 +1,4 @@
 name: Flutter CI/CD
-
-# Trigger workflow on push and PR to main
 on:
   push:
     branches:
