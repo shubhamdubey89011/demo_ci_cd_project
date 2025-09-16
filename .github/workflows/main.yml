@@ -14,7 +14,7 @@ jobs:
 
       - uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'  # Fix: specify Java distribution
+          distribution: 'temurin'
           java-version: '17'
 
       - uses: subosito/flutter-action@v2
@@ -47,8 +47,8 @@ jobs:
       - run: flutter clean
       - run: flutter build ios --release --no-codesign
 
-  build_appbundle:
-    name: Build Flutter (Android)
+  build_apk:
+    name: Build Flutter APK (Android)
     needs: [flutter_test]
     runs-on: windows-latest
     steps:
@@ -66,4 +66,10 @@ jobs:
 
       - run: flutter pub get
       - run: flutter clean
-      - run: flutter build appbundle
+      - run: flutter build apk --release
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: release-apk
+          path: build\app\outputs\flutter-apk\app-release.apk
